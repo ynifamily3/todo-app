@@ -1,4 +1,9 @@
-import { sum } from "./module1";
-import { diff } from "./module2";
+import("./module1")
+  .then(({ sum }) => {
+    console.log(sum(1, 2));
+  })
+  .catch((err) => {
+    console.error(err);
+  });
 
-console.log(sum(1, 2), diff(2, Math.random()));
+export {};
