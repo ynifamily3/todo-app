@@ -67,4 +67,7 @@ module.exports = {
     filename: "[name].[chunkhash].js",
     chunkFilename: "[name].bundle.[chunkhash].js",
   },
+  experiments: {
+    topLevelAwait: true,
+  },
 };

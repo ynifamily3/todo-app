@@ -4,6 +4,8 @@
       "@babel/preset-env", {
       "modules":false,
       "loose":true
-    }]
-  ]
+    }
+    ]
+  ],
+  "plugins": ["@babel/plugin-syntax-top-level-await"]
 }
