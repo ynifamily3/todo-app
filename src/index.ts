@@ -1,9 +1,7 @@
-import("./module1")
-  .then(({ sum }) => {
-    console.log(sum(1, 2));
-  })
-  .catch((err) => {
-    console.error(err);
-  });
+(async () => {
+  const { sum } = await import("./module1");
+  const { diff } = await import("./module2");
 
-export {};
+  console.log(sum(10, 20));
+  console.log(diff(444, 44));
+})();
