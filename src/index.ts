@@ -13,4 +13,5 @@ window.requestAnimationFrame(() => {
   const newMain = view(main, state);
   console.log(newMain);
   main.replaceWith(newMain);
+  console.log(view);
 });
