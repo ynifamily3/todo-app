@@ -1,5 +1,5 @@
 import { TodoState } from "./entity/Todo";
-import getTodos from "./getTodos";
+const { getTodos } = await import("./getTodos");
 const { view } = await import("./view");
 
 const state: TodoState = {

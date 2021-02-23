@@ -11,4 +11,4 @@ const getTodos = (): Todo[] => {
   return [...data];
 };
 
-export default getTodos;
+export { getTodos };
