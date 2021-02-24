@@ -1,7 +1,7 @@
-import { TodoState } from "../entity/Todo";
+import { TodoState, TodoView } from "../entity/Todo";
 
 // target을 복제하여 state 주입한 DOM을 반환합니다.
-const filtersView = (
+const filtersView: TodoView = (
   targetElement: HTMLElement,
   { currentFilter }: TodoState
 ): HTMLElement => {

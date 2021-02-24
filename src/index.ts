@@ -1,17 +1,23 @@
 import { TodoState } from "./entity/Todo";
 const { getTodos } = await import("./getTodos");
-const { view } = await import("./view");
+// const { view } = await import("./view");
+const { todosView } = await import("./view/todosView");
+const { counterView } = await import("./view/counterView");
+const { filtersView } = await import("./view/filtersView");
+const { add, renderRoot, renderWrapper } = await import("./registry");
+
+add("todos", todosView);
+add("counter", counterView);
+add("filters", filtersView);
 
 const state: TodoState = {
   todos: getTodos(),
   currentFilter: "모두",
 };
 
-const main = document.querySelector(".todoapp") as HTMLElement;
-
 window.requestAnimationFrame(() => {
-  const newMain = view(main, state);
-  console.log(newMain);
+  const main = document.querySelector<HTMLElement>(".todoapp");
+  if (main === null) return;
+  const newMain = renderRoot(main, state);
   main.replaceWith(newMain);
-  console.log(view);
 });
