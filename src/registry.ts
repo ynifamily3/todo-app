@@ -4,11 +4,7 @@ const { todosView } = await import("./view/todosView");
 const { counterView } = await import("./view/counterView");
 const { filtersView } = await import("./view/filtersView");
 
-const registry: Record<string, TodoView> = {
-  todos: todosView,
-  counter: counterView,
-  filters: filtersView,
-};
+const registry: Record<string, TodoView> = {};
 
 const renderWrapper = (component: TodoView): TodoView => {
   return (targetElement, state) => {

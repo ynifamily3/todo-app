@@ -1,6 +1,5 @@
 import { TodoState } from "./entity/Todo";
 const { getTodos } = await import("./getTodos");
-// const { view } = await import("./view");
 const { todosView } = await import("./view/todosView");
 const { counterView } = await import("./view/counterView");
 const { filtersView } = await import("./view/filtersView");
