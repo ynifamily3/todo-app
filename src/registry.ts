@@ -1,9 +1,5 @@
 import { TodoState, TodoView } from "./entity/Todo";
 
-const { todosView } = await import("./view/todosView");
-const { counterView } = await import("./view/counterView");
-const { filtersView } = await import("./view/filtersView");
-
 const registry: Record<string, TodoView> = {};
 
 const renderWrapper = (component: TodoView): TodoView => {
