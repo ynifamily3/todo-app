@@ -1,4 +1,5 @@
 import { Todo, TodoState, TodoView } from "../entity/Todo";
+import { cloneComponent } from "../util/cloneComponent";
 
 // todo state로부터 DOM을 그려서 반환합니다.
 const getTodoElement = (todo: Todo) => {
@@ -22,7 +23,7 @@ const todosView: TodoView = (
   targetElement: HTMLElement,
   { todos }: TodoState
 ) => {
-  const newTodoList = targetElement.cloneNode(true) as HTMLElement;
+  const newTodoList = cloneComponent(targetElement);
   const todosElements = todos.map(getTodoElement).join("");
   newTodoList.innerHTML = todosElements;
   return newTodoList;

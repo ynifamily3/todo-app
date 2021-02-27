@@ -3,7 +3,7 @@ const { getTodos } = await import("./getTodos");
 const { todosView } = await import("./view/todosView");
 const { counterView } = await import("./view/counterView");
 const { filtersView } = await import("./view/filtersView");
-const { add, renderRoot, renderWrapper } = await import("./registry");
+const { add, renderRoot } = await import("./registry");
 
 add("todos", todosView);
 add("counter", counterView);
@@ -16,7 +16,9 @@ const state: TodoState = {
 
 window.requestAnimationFrame(() => {
   const main = document.querySelector<HTMLElement>(".todoapp");
-  if (main === null) return;
+  if (main === null) {
+    return;
+  }
   const newMain = renderRoot(main, state);
   main.replaceWith(newMain);
 });

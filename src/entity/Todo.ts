@@ -10,5 +10,5 @@ export interface TodoState {
 
 export type TodoView = (
   targetElement: HTMLElement,
-  { todos }: TodoState
+  todoState: TodoState
 ) => HTMLElement;

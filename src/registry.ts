@@ -1,16 +1,20 @@
-import { TodoState, TodoView } from "./entity/Todo";
+import { TodoView } from "./entity/Todo";
+import { cloneComponent } from "./util/cloneComponent";
 
-const registry: Record<string, TodoView> = {};
+const registry: Record<string, TodoView> = {}; // {todos: ƒ, counter: ƒ, filters: ƒ}
 
-const renderWrapper = (component: TodoView): TodoView => {
+const renderWrapper: (component: TodoView) => TodoView = (component) => {
   return (targetElement, state) => {
     const element = component(targetElement, state);
+    // 실제 dom 찾기
     const childComponents = element.querySelectorAll<HTMLElement>(
       "[data-component]"
     );
     Array.from(childComponents).forEach((target) => {
       const name = target.dataset.component;
-      if (name === undefined) return;
+      if (name === undefined) {
+        return;
+      }
       if (!(name in registry)) return;
       const child = registry[name];
       target.replaceWith(child(target, state));
@@ -24,9 +28,6 @@ const add = (name: string, component: TodoView) => {
 };
 
 const renderRoot: TodoView = (root, state) => {
-  const cloneComponent = (root: HTMLElement) => {
-    return root.cloneNode(true) as HTMLElement;
-  };
   return renderWrapper(cloneComponent)(root, state);
 };
 
