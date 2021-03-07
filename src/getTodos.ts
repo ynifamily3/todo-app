@@ -8,7 +8,10 @@ const data: Todo[] = [
 ];
 
 const getTodos = (): Todo[] => {
-  return [...data];
+  return [
+    ...data,
+    { completed: Math.random() > 0.5, text: "테스트: " + Math.random() },
+  ];
 };
 
 export { getTodos };

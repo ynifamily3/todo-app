@@ -9,6 +9,12 @@ module.exports = {
   devtool: "source-map",
   devServer: {
     port: 3000,
+    hot: true,
+    overlay: {
+      errors: true,
+      warnings: true,
+    },
+    historyApiFallback: true,
   },
   entry: {
     index: ["./src/index.ts"],

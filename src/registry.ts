@@ -5,7 +5,7 @@ const registry: Record<string, TodoView> = {}; // {todos: ƒ, counter: ƒ, filte
 
 const renderWrapper: (component: TodoView) => TodoView = (component) => {
   return (targetElement, state) => {
-    const element = component(targetElement, state);
+    const element = component(targetElement, state); // root의 경우 state가 잘려서 그냥 클론만 해 준다.
     // 실제 dom 찾기
     const childComponents = element.querySelectorAll<HTMLElement>(
       "[data-component]"
