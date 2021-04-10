@@ -96,8 +96,8 @@ applyDiff(document.body, main, newMain);
 ## 결과
 
 - before
-- https://user-images.githubusercontent.com/13795765/114253272-86514b80-99e4-11eb-90b4-638d989ae965.mov
+	- https://user-images.githubusercontent.com/13795765/114253272-86514b80-99e4-11eb-90b4-638d989ae965.mov
 
 - after
-- https://user-images.githubusercontent.com/13795765/114253283-95d09480-99e4-11eb-8a22-4b5fd2885b6f.mov
+	- https://user-images.githubusercontent.com/13795765/114253283-95d09480-99e4-11eb-8a22-4b5fd2885b6f.mov
 
